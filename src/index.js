@@ -13,7 +13,8 @@ class ECharts extends Component {
     canvas: PropTypes.bool,
     onLoadEnd: PropTypes.func,
     backgroundColor: PropTypes.string,
-    customTemplatePath: PropTypes.string
+    customTemplatePath: PropTypes.string,
+    webviewProps:PropTypes.object
   };
 
   static defaultProps = {
@@ -168,6 +169,7 @@ class ECharts extends Component {
           allowUniversalAccessFromFileURLs
           mixedContentMode="always"
           onLoadEnd={this.onLoadEnd}
+          {...this.props.webviewProps}
         />
       </View>
     );
